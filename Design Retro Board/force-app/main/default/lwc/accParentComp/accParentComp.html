@@ -1,0 +1,13 @@
+<template>
+    <lightning-card title="Acconts">
+        <lightning-combobox 
+        name="accPicklist"
+        lable="Select Account" 
+        value={selectedAccountId} 
+        options={picklistOptions} 
+        onchange={handleSelection}>
+    </lightning-combobox>
+    <c-con-child-comp account-id={selectedAccountId}></c-con-child-comp>
+    </lightning-card>
+    
+</template>

@@ -1,0 +1,16 @@
+<!-- sldsValidatorIgnore -->
+<template>
+    <lightning-card title="My Component">
+        <template if:true={accounts}>
+            <lightning-datatable
+            key-field="Id"
+            data={accounts}
+            columns={columns}
+            hide-checkbox-column="true">
+        </lightning-datatable>
+        </template>
+        <template if:true={error}>
+            <div> {error}</div>
+        </template>
+    </lightning-card>
+</template>

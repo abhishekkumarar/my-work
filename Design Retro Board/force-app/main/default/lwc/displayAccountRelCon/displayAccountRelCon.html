@@ -1,0 +1,21 @@
+<template>
+    <lightning-card title="Accounts and Rel Contacts">
+        <template if:true={accounts}>
+            <template for:each={accounts} for:item="account">
+                <div key ={account.Id} class="slds-m-bottom_medium">
+                    <p><b>{account.Name} Contacts </b></p>
+                    <ul>
+                        
+                        <template for:each={account.Contacts} for:item="contact">
+                            
+                            <li key={contact.Id}> {contact.LastName}-{contact.Email}</li>
+                        </template>
+                    </ul>
+                </div>
+            </template>
+        </template>
+        <template if:true={error}>
+            <div class="slds-text-color_error">{error}</div>
+        </template>
+    </lightning-card>
+</template>

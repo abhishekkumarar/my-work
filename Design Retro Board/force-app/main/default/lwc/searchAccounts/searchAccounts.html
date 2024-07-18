@@ -1,0 +1,12 @@
+<template>
+    <lightning-card title="Search Accounts">
+        <c-search-account-child onsearchterm={handleSearchTerm}></c-search-account-child>
+        <template if:true={accounts}>
+            <template for:each={accounts} for:item="account">
+                <div key={account.Id}>
+                    <p><b>{account.Name} </b>    {account.Email__c}       {account.Industry} </p>
+                </div>
+            </template>
+        </template>
+    </lightning-card>
+</template>
